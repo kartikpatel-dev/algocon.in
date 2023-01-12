@@ -1,19 +1,19 @@
 <?php
-if (!function_exists('home_services_callback')) {
-    add_shortcode('home_services', 'home_services_callback');
+if (!function_exists('services_list_callback')) {
+    add_shortcode('services_list', 'services_list_callback');
 
-    function home_services_callback()
+    function services_list_callback()
     {
         ob_start();
 
         $args = array(
             'post_type' => 'services',
-            'posts_per_page' => 6,
+            'posts_per_page' => -1,
         );
 
         $the_services = new WP_Query($args);
 ?>
-        <div class="home_services_list services_list">
+        <div class="services_page services_list">
             <?php
             if ($the_services->have_posts()) {
 

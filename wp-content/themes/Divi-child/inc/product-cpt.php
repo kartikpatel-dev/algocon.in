@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Register Custom 'Services' Post Type
+ * Register Custom 'Products' Post Type
  * Hooks into init.
  */
 
-function divi_services_cpt()
+function divi_products_cpt()
 {
     $themeName = 'Divi-Child';
-    $pluralName = 'Services';
-    $singularName = 'Service';
-    $postSlug = 'services';
+    $pluralName = 'Products';
+    $singularName = 'Product';
+    $postSlug = 'products';
 
     $labels  = array(
         'name'                  => esc_html_x($pluralName, 'Post Type General Name', $themeName),
@@ -52,13 +52,13 @@ function divi_services_cpt()
         'label'               => esc_html__($pluralName, $themeName),
         'description'         => esc_html__($singularName . '.', $themeName),
         'labels'              => $labels,
-        'supports'            => array('title', 'editor', 'excerpt', 'thumbnail', 'page-attributes'),
+        'supports'            => array('title', 'editor', 'thumbnail', 'page-attributes'),
         'hierarchical'        => false,
         'public'              => true,
-        'menu_icon'           => 'dashicons-list-view',
+        'menu_icon'           => 'dashicons-products',
         'show_ui'             => true,
         'show_in_menu'        => true,
-        'menu_position'       => 5,
+        'menu_position'       => 6,
         'show_in_admin_bar'   => true,
         'show_in_nav_menus'   => true,
         'can_export'          => true,
@@ -72,4 +72,4 @@ function divi_services_cpt()
 
     register_post_type($postSlug, $args);
 }
-add_action('init', 'divi_services_cpt', 0);
+add_action('init', 'divi_products_cpt', 0);

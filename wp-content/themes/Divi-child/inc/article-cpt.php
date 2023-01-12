@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Register Custom 'Products' Post Type
+ * Register Custom 'Articles' Post Type
  * Hooks into init.
  */
 
-function divi_products_cpt()
+function divi_articles_cpt()
 {
     $themeName = 'Divi-Child';
-    $pluralName = 'Products';
-    $singularName = 'Product';
-    $postSlug = 'products';
+    $pluralName = 'Articles';
+    $singularName = 'Article';
+    $postSlug = 'articles';
 
     $labels  = array(
         'name'                  => esc_html_x($pluralName, 'Post Type General Name', $themeName),
@@ -55,7 +55,7 @@ function divi_products_cpt()
         'supports'            => array('title', 'editor', 'thumbnail', 'page-attributes'),
         'hierarchical'        => false,
         'public'              => true,
-        'menu_icon'           => 'dashicons-products',
+        'menu_icon'           => 'dashicons-text-page',
         'show_ui'             => true,
         'show_in_menu'        => true,
         'menu_position'       => 5,
@@ -72,4 +72,4 @@ function divi_products_cpt()
 
     register_post_type($postSlug, $args);
 }
-add_action('init', 'divi_products_cpt', 0);
+add_action('init', 'divi_articles_cpt', 0);

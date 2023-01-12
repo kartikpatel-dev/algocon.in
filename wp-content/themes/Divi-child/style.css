@@ -1,10 +1,10 @@
 /*
 Theme Name: Divi Child Theme
 Description: Divi Child Theme
-Author:  David Tierney
-Author URI:  http://designsbytierney.com
+Author:  Elegant Themes
+Author URI:  http://www.elegantthemes.com
 Template: Divi
-Version:  1.0.2
+Version:  1.0.0
 */
 
 
@@ -28,26 +28,28 @@ Version:  1.0.2
     width: 85%;
 }
 
-.home_products_list {
+.products_list .et_pb_ajax_pagination_container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
     row-gap: 40px;
 }
 
-.home_products_list .hpl_item {
+.products_list .products {
     background-color: var(--color-white-6);
     box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.3);
     border-radius: 6px;
+    margin-bottom: 20px;
 }
 
-.home_products_list .hpl_item .item_img {
+.products_list .products .entry-featured-image-url {
     position: relative;
     display: inline-flex;
     width: 100%;
+    margin-bottom: 0;
 }
 
-.home_products_list .hpl_item .item_img::before {
+.products_list .products .entry-featured-image-url::before {
     content: "";
     background-color: var(--color-primary);
     width: 100%;
@@ -65,60 +67,65 @@ Version:  1.0.2
     border-radius: 6px 6px 0 0;
 }
 
-.home_products_list .hpl_item:hover .item_img::before {
+.products_list .products:hover .entry-featured-image-url::before {
     opacity: 0.6;
     transform: rotateY(180deg) scale(1);
     -ms-transform: rotateY(180deg) scale(1);
     -webkit-transform: rotateY(180deg) scale(1);
 }
 
-.home_products_list .hpl_item img {
+.products_list .products .entry-featured-image-url img {
     border-radius: 6px 6px 0 0;
     width: 100%;
+    height: 180px;
 }
 
-.home_products_list .hpl_item .item_content {
-    padding: 10px 5px;
+.products_list .custom_content_wrapper {
+    padding: 10px 15px;
 }
 
-.home_products_list .hpl_item .item_title {
-    color: var(--color-darkblue);
+.products_list .products .entry-title {
+    font-size: 22px;
     text-align: center;
     line-height: 26px;
 }
 
-.home_products_list .hpl_item:hover .item_title {
+.products_list .products .entry-title a {
+    color: var(--color-darkblue);
+}
+
+.products_list .products:hover .entry-title a {
     color: var(--color-primary);
 }
 
-.home_services_list {
+.services_list .et_pb_ajax_pagination_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 60px;
     row-gap: 60px;
 }
 
-.home_services_list .hsl_item a {
+.services_list .services {
     display: flex;
-    color: #666;
+    margin-bottom: 0;
 }
 
-.home_services_list .hsl_item .item_img {
+.services_list .services .entry-featured-image-url {
     width: 15%;
     margin-right: 15px;
 }
 
-.home_services_list .hsl_item .item_img img {
+.services_list .services .entry-featured-image-url img {
     border-radius: 10%;
     width: 80px;
     height: 80px;
 }
 
-.home_services_list .hsl_item .item_content {
+.services_list .services .custom_content_wrapper {
     width: 85%;
 }
 
-.home_services_list .hsl_item .item_title {
+.services_list .services .entry-title {
     font-weight: 600;
     font-size: 20px;
     color: var(--color-primary);
@@ -129,11 +136,11 @@ Version:  1.0.2
     display: inline-block;
 }
 
-.home_services_list .hsl_item:hover .item_title {
+.services_list .services:hover .entry-title {
     color: var(--color-secondary);
 }
 
-.home_services_list .hsl_item .item_title::before {
+.services_list .services .entry-title::before {
     content: "";
     position: absolute;
     width: 0;
@@ -145,7 +152,40 @@ Version:  1.0.2
     bottom: 0;
 }
 
-.home_services_list .hsl_item:hover .item_title::before {
+.services_list .services:hover .entry-title::before {
     opacity: 1;
     width: 100%;
+}
+
+.news_list .et_pb_image_container {
+    margin: -19px -19px 29px;
+    border: 1px solid #d8d8d8;
+    border-bottom-width: 0;
+}
+
+.news_list .post .entry-featured-image-url {
+    position: relative;
+}
+
+.news_list .post .entry-featured-image-url::before {
+    content: "";
+    background-color: var(--color-secondary);
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+
+.news_list .post:hover .entry-featured-image-url::before {
+    opacity: 0.7;
+    height: 100%;
+}
+
+.news_list .post:hover .entry-title {
+    color: var(--color-primary);
 }

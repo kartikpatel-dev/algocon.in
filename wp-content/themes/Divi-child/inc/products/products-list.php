@@ -1,19 +1,19 @@
 <?php
-if (!function_exists('home_products_callback')) {
-    add_shortcode('home_products', 'home_products_callback');
+if (!function_exists('products_list_callback')) {
+    add_shortcode('products_list', 'products_list_callback');
 
-    function home_products_callback()
+    function products_list_callback()
     {
         ob_start();
 
         $args = array(
             'post_type' => 'products',
-            'posts_per_page' => 8,
+            'posts_per_page' => -1,
         );
 
         $the_products = new WP_Query($args);
 ?>
-        <div class="home_products_list products_list">
+        <div class="products_page products_list">
             <?php
             if ($the_products->have_posts()) {
 
