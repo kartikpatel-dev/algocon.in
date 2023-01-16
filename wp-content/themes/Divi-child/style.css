@@ -14,9 +14,9 @@ Version:  1.0.0
 /* Colors */
 :root {
     --color-default: #222;
-    --color-primary: #f58634;
-    --color-secondary: #3e4095;
-    --color-darkblue: #1f365c;
+    --color-primary: #ce2127;
+    --color-secondary: #1e1e1e;
+    --color-lightgray: #9e9e9e;
     --color-white-6: #f6f6f6;
 }
 
@@ -91,7 +91,7 @@ Version:  1.0.0
 }
 
 .products_list .products .entry-title a {
-    color: var(--color-darkblue);
+    color: var(--color-secondary);
 }
 
 .products_list .products:hover .entry-title a {
@@ -188,4 +188,76 @@ Version:  1.0.0
 
 .news_list .post:hover .entry-title {
     color: var(--color-primary);
+}
+
+.header_section {
+    padding: 0;
+    position: relative;
+    background-color: #fff;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header_section .header_module {
+    background-image: linear-gradient(180deg, rgba(206, 33, 39, 0.9) 0%, rgba(206, 33, 39, 0.4) 100%);
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+    background-position: 50%;
+    background-size: cover;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    background-repeat: no-repeat;
+}
+
+.header_section .header_content_container {
+    margin: 20px auto;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+}
+
+.header_section .header_content_title {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 1.4em;
+    color: #fff;
+}
+
+.single-products #main-content .container::before,
+.single-services #main-content .container::before {
+    content: unset;
+}
+
+.single-products #main-content .container,
+.single-services #main-content .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.single-products #main-content .nav-single,
+.single-services #main-content .nav-single {
+    margin-top: 40px;
+}
+
+.et_pb_gutters3.et_pb_footer_columns4 .footer-widget .fwidget,
+.et_pb_gutters3.et_pb_footer_columns3 .footer-widget .fwidget {
+    margin-bottom: 10px;
+}
+
+.bottom-nav {
+    text-align: center;
+}
+
+.bottom-nav li.current-menu-item>a {
+    color: #9e9e9e;
+}
+
+#footer-info {
+    float: none;
+    text-align: center;
 }

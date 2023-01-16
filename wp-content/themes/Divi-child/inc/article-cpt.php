@@ -10,7 +10,7 @@ function divi_articles_cpt()
     $themeName = 'Divi-Child';
     $pluralName = 'Articles';
     $singularName = 'Article';
-    $postSlug = 'articles';
+    $postSlug = 'article';
 
     $labels  = array(
         'name'                  => esc_html_x($pluralName, 'Post Type General Name', $themeName),
@@ -62,7 +62,7 @@ function divi_articles_cpt()
         'show_in_admin_bar'   => true,
         'show_in_nav_menus'   => true,
         'can_export'          => true,
-        'has_archive'         => $postSlug.'-list',
+        'has_archive'         => $postSlug . '-list',
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
         'rewrite'             => $rewrite,
@@ -70,6 +70,6 @@ function divi_articles_cpt()
         'show_in_rest'        => true,
     );
 
-    register_post_type($postSlug, $args);
+    register_post_type($postSlug . 's', $args);
 }
 add_action('init', 'divi_articles_cpt', 0);
