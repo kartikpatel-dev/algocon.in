@@ -59,3 +59,37 @@ function delete_post_type()
     unregister_post_type('project');
 }
 add_action('init', 'delete_post_type', 100);
+
+
+function load_js()
+{
+?>
+    <script>
+        const headerImg = document.querySelector(".home_header .et_pb_image_wrap");
+        const headerLine = document.querySelector(".home_header .scale-transform");
+        let zoom = 1;
+        const ZOOM_SPEED = 0.2;
+        let moveBottom = 1;
+        const MOVE_SPEED = 20;
+
+        document.addEventListener("wheel", function(e) {
+            if (e.deltaY > 0) {
+                headerImg.style.transform = `scale(${zoom += ZOOM_SPEED})`;
+                headerLine.style.transform = `translate(0, ${moveBottom += MOVE_SPEED}px)`;
+            } else {
+                if (zoom > 1) {
+                    zoom -= ZOOM_SPEED;
+                    headerImg.style.transform = `scale(${zoom})`;
+                }
+
+                if (moveBottom > 1) {
+                    moveBottom -= MOVE_SPEED;
+                    headerLine.style.transform = `translate(0, ${moveBottom}px)`;
+                }
+            }
+
+        });
+    </script>
+<?php
+}
+add_action('wp_footer', 'load_js');
