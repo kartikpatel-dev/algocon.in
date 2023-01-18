@@ -14,8 +14,8 @@ Version:  1.0.0
 /* Colors */
 :root {
     --color-default: #222;
-    --color-primary: #ce2127;
-    --color-secondary: #1e1e1e;
+    --color-primary: #86c14d;
+    --color-secondary: #29333c;
     --color-lightgray: #9e9e9e;
     --color-white-6: #f6f6f6;
 }
@@ -108,7 +108,7 @@ Version:  1.0.0
 .services_list .services {
     display: flex;
     margin-bottom: 0;
-    border: 1px solid #ce2127;
+    border: 1px solid var(--color-secondary);
     padding: 10px;
 }
 
@@ -131,7 +131,7 @@ Version:  1.0.0
 .services_list .services .entry-title {
     font-weight: 600;
     font-size: 20px;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     margin-top: 0;
     margin-bottom: 5px;
     position: relative;
@@ -140,7 +140,7 @@ Version:  1.0.0
 }
 
 .services_list .services:hover .entry-title {
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .services_list .services .entry-title::before {
@@ -151,7 +151,7 @@ Version:  1.0.0
     margin: 2px 0 0;
     transition: all .2s ease-in-out;
     opacity: 0;
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
     bottom: 0;
 }
 
@@ -263,11 +263,6 @@ Version:  1.0.0
 #footer-info {
     float: none;
     text-align: center;
-}
-
-.footer-logo {
-    background-color: var(--color-white-6);
-    padding: 10px;
 }
 
 .single-products .et_pb_post_title .entry-title,
@@ -401,7 +396,8 @@ Version:  1.0.0
 
 .hero-content .btn:after {
     border-color: var(--color-white-6);
-    border-bottom-width: 1px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
     display: block;
     height: 0;
     margin-bottom: -0.625rem;
@@ -426,7 +422,6 @@ Version:  1.0.0
 
 .hero-content .btn:hover:after {
     width: 2.25rem;
-    border-style: solid;
 }
 
 .home_header .et_pb_column_single .et_pb_image {
@@ -442,7 +437,7 @@ Version:  1.0.0
     margin-left: auto;
     margin-right: auto;
     background-position: 50%;
-    max-width: 36.25rem;
+    max-width: 39rem;
     background-repeat: no-repeat;
     /* background-position: top 2.5rem center; */
     background-image: url('./assets/images/services-bg.svg');
@@ -460,8 +455,8 @@ Version:  1.0.0
     width: 100%;
     -webkit-perspective: 1000px;
     perspective: 1000px;
-    width: 14.625rem;
-    height: 14.625rem;
+    width: 16rem;
+    height: 15rem;
 }
 
 .home_services_grid .flip-card:first-child {
@@ -514,6 +509,10 @@ Version:  1.0.0
     transform: rotateY(180deg);
 }
 
+.home_services_grid .flip-card:hover .card-face-front {
+    z-index: -1;
+}
+
 .home_services_grid .flip-card .card-face {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -527,6 +526,7 @@ Version:  1.0.0
     font-size: 1.125rem;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    text-align: center;
 }
 
 .home_services_grid .capability-card.flip-card .card-face-front {
@@ -670,8 +670,162 @@ Version:  1.0.0
     stroke: transparent;
 }
 
+.home_services_grid .card_content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: var(--color-secondary);
+    color: var(--color-white-6);
+}
+
+.home_services_grid .card_content .card_title {
+    color: var(--color-white-6);
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.home_services_grid .card_content p {
+    color: var(--color-white-6);
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.home_services_btn_main {
+    text-align: center;
+}
+
+.home_services_btn {
+    display: inline-block;
+    position: relative;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.125rem;
+    line-height: 1.4;
+    color: var(--color-white-6);
+}
+
+.home_services_btn:after {
+    border-color: rgba(220, 220, 221, 1);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    display: block;
+    height: 0;
+    margin-bottom: -0.625rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    -webkit-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    -o-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    -webkit-transition-duration: .15s;
+    -o-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+    content: "";
+}
+
+.home_services_btn a {
+    display: inline-block;
+    position: relative;
+    color: var(--color-white-6);
+    border-color: rgba(220, 220, 221, 1);
+    border-bottom-width: 2px;
+    border-style: solid;
+    padding-bottom: 0.375rem;
+    text-decoration: none;
+    -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+    -o-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, filter, backdrop-filter, -o-transform;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-box-shadow, -webkit-transform, -o-transform, -webkit-filter, -webkit-backdrop-filter;
+    -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    -o-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    -webkit-transition-duration: .15s;
+    -o-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+.home_services_btn a:after,
+.home_services_btn a:before {
+    background-color: rgba(220, 220, 221, 1);
+    display: block;
+    height: 0.375rem;
+    margin-bottom: -0.25rem;
+    position: absolute;
+    bottom: 0;
+    width: 0.375rem;
+    -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+    -o-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, filter, backdrop-filter, -o-transform;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-box-shadow, -webkit-transform, -o-transform, -webkit-filter, -webkit-backdrop-filter;
+    -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    -o-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    -webkit-transition-duration: .15s;
+    -o-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+    content: "";
+}
+
+.home_services_btn a:before {
+    left: 0;
+}
+
+.home_services_btn a:after {
+    border-radius: 0.25rem;
+    right: 0;
+}
+
+.home_services_btn:hover:after {
+    width: 2.25rem;
+}
+
+.logged-in-as a {
+    color: var(--color-primary);
+}
+
+.form-submit .et_pb_button {
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.form-submit .et_pb_button:hover {
+    background-color: var(--color-primary);
+}
+
+#comment {
+    min-height: 100px;
+    width: 100%;
+    resize: vertical;
+}
+
+.et_pb_widget li a:hover {
+    color: var(--color-primary);
+}
+
+.et_pb_widget h2 {
+    color: var(--color-secondary);
+}
+
 
 @media (max-width: 980px) {
+    .et_header_style_left #logo {
+        max-width: 70%;
+    }
+
     .services_list .et_pb_ajax_pagination_container {
         grid-template-columns: repeat(1, 1fr);
     }
