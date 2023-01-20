@@ -74,8 +74,15 @@ function load_js()
 
         document.addEventListener("wheel", function(e) {
             if (e.deltaY > 0) {
-                headerImg.style.transform = `scale(${zoom += ZOOM_SPEED})`;
-                headerLine.style.transform = `translate(0, ${moveBottom += MOVE_SPEED}px)`;
+                if (zoom <= 4) {
+                    zoom += ZOOM_SPEED;
+                    headerImg.style.transform = `scale(${zoom})`;
+                }
+
+                if (moveBottom <= 4) {
+                    moveBottom += MOVE_SPEED;
+                    headerLine.style.transform = `translate(0, ${moveBottom}px)`;
+                }
             } else {
                 if (zoom > 1) {
                     zoom -= ZOOM_SPEED;
